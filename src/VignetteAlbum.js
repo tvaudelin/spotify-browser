@@ -1,13 +1,19 @@
 import React from "react"
+import {useHistory} from "react-router-dom";
 
-export default function VignetteAlbum({ track }) {
+export default function VignetteAlbum({ album }) {
+    const history = useHistory()
+
+    function OpenAlbum() {
+        history.push("/album/" + album.id)
+    }
     return (
         <div
             className="d-flex flex-column m-2 align-items-center"
             style={{ height: "277px", width: "200px", cursor: "pointer", backgroundColor: "#181818", padding: "16px", overflow: "hidden"}}
-            //onClick={}
+            onClick={OpenAlbum}
         >
-            <img src={track.albumUrl} style={{ height: "180px", width: "180px" }} />
+            <img src={album.albumUrl ? album.albumUrl : album.id} style={{ height: "180px", width: "180px" }} alt={''}/>
             <div className="mt-3 text-white">
                 <div
                     className={"fw-bolder"}
@@ -19,7 +25,7 @@ export default function VignetteAlbum({ track }) {
                         width: "180px"
                     }}
                 >
-                    {track.title}
+                    {album.title}
                 </div>
                 <div
                      className="fw-light"
@@ -31,7 +37,7 @@ export default function VignetteAlbum({ track }) {
                          width: "180px"
                      }}
                 >
-                    {track.artist}
+                    {album.artist}
                 </div>
             </div>
         </div>

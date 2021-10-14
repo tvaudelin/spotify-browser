@@ -28,7 +28,8 @@ function SecuredApp() {
                 animation={'border'}
             />
             <p className={"mx-5"}>Connexion en cours...</p>
-            <p className={'pt-3'}>Un soucis&nbsp;? N'hésitez pas à
+            <p className={'pt-3'}>Un soucis&nbsp;? N'hésitez pas à&nbsp;
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,no-script-url */}
                 <a href={''}
                    onClick={() => { logout(); login(); }}
                    style={{color: '#10BC4C'}}>
