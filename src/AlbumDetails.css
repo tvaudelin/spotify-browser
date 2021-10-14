@@ -1,0 +1,29 @@
+.header {
+    background: -webkit-linear-gradient(top, #565656, #2B2B2B);
+    color: white;
+    height: 300px;
+    width: 100%;
+}
+
+.release-year {
+    color: grey;
+}
+
+.track-list {
+    width: 100%;
+    height: auto;
+    border-top-color: #121212;
+    margin-top: 1px;
+    border-top-width: 1px;
+    background: linear-gradient(180deg, rgba(34,34,34,1) 0, rgba(18,18,18,1) 210px);
+}
+
+.track-list-title {
+    color: #B3B3B3;
+    border-bottom: 1px solid #565656;
+    margin-bottom: 10px;
+}
+
+.track-list-row {
+    color: #565656;
+}
