@@ -42,11 +42,14 @@ function SecuredApp() {
     if (!authService.isAuthenticated()) {
         return (
             <div className="header-logged-out text-white py-3">
-                <p>Vous devez vous connecter à votre compte Spotify pour accéder au moteur de recherche&nbsp;:</p>
+                <p style={{marginTop: 100}}>
+                    Vous devez vous connecter à votre compte Spotify <br/>
+                    pour accéder au moteur de recherche&nbsp;:
+                </p>
                 <Button
                     className="rounded-pill border-0 px-5 py-3 fw-bolder"
                     onClick={login}
-                    style={{background: '#10BC4C'}}
+                    style={{background: '#10BC4C', marginTop: 40}}
                 >
                     CONNEXION
                 </Button>
