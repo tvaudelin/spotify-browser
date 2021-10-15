@@ -1,7 +1,7 @@
 import React from "react"
 import {useHistory} from "react-router-dom";
-import {Button} from "react-bootstrap";
 import {useAuth} from "react-oauth2-pkce";
+import logout from "./assets/icons/logout.png"
 
 export default function Logout() {
     const { authService } = useAuth();
@@ -15,19 +15,19 @@ export default function Logout() {
         <div style={{
             position: "absolute",
             top: "20px",
-            left: "20px",
+            right: "20px",
         }}>
-            <Button
-                className={"btn-sm px-3 border-1 rounded-pill"}
+            <img
+                src={logout}
                 onClick={HandleLogout}
                 style={{
-                    background: '#121212',
-                    borderColor: '#10BC4C',
-                    color: '#10BC4C',
+                    cursor: "pointer",
+                    height: 35,
+                    width: 35
                 }}
-            >
-                Déconnexion
-            </Button>
+                alt="Déconnexion"
+                title="Déconnexion"
+            />
         </div>
     )
 }

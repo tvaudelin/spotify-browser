@@ -12,10 +12,10 @@
 .track-list {
     width: 100%;
     height: auto;
-    border-top-color: #121212;
+    border-top-color: #000000;
     margin-top: 1px;
     border-top-width: 1px;
-    background: linear-gradient(180deg, rgba(34,34,34,1) 0, rgba(18,18,18,1) 210px);
+    background: linear-gradient(180deg, rgba(36,36,36,1) 0, rgba(22,22,22,1) 210px);
 }
 
 .track-list-title {
@@ -26,4 +26,28 @@
 
 .track-list-row {
     color: #565656;
+}
+
+.track-list-row-title {
+    color: #B3B3B3;
+}
+
+.track-list-row:hover {
+    color: #FFFFFF;
+    background: grey;
+    border-radius: 5px;
+}
+
+.track-list-row:hover .track-list-row-title  {
+    color: #FFFFFF;
+    background: grey;
+}
+
+.previous-btn {
+    filter: invert(1);
+    height: 60px;
+    width: 60px;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
 }
