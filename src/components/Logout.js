@@ -1,6 +1,6 @@
 import React from "react"
 import {useAuth} from "react-oauth2-pkce";
-import logout from "./assets/icons/logout.png"
+import logout from "../assets/icons/logout.png"
 
 export default function Logout() {
     const { authService } = useAuth();

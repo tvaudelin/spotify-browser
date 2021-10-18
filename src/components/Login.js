@@ -19,8 +19,13 @@ export default function Login() {
             <p className="pt-3">Un soucis&nbsp;? N'hésitez pas à&nbsp;
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a href={''}
-                   onClick={() => { logout().then(); login().then(); }}
-                   style={{color: '#1c5b2b'}}>
+                   onClick={() => { logout()
+                       .then(() => {
+                               login().then()
+                       })
+                   }}
+                   style={{color: '#1c5b2b'}}
+                >
                     retenter votre chance&nbsp;!
                 </a>
             </p>

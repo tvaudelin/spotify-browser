@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './SecuredApp.css'
+import './assets/styles/SecuredApp.css'
 import {AuthProvider, AuthService} from 'react-oauth2-pkce'
 import App from "./App";
 

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import VignetteAlbum from "./VignetteAlbum";
+import VignetteAlbum from "../components/VignetteAlbum";
 import SpotifyWebApi from "spotify-web-api-node";
 
 const spotifyApi = new SpotifyWebApi({

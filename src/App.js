@@ -1,11 +1,11 @@
 import React from "react"
-import './App.css'
+import './assets/styles/App.css'
 import {Container} from "react-bootstrap"
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom"
-import Search from "./Search";
-import AlbumDetails from "./AlbumDetails";
-import Logout from "./Logout";
-import Login from "./Login";
+import Search from "./pages/Search";
+import AlbumDetails from "./pages/AlbumDetails";
+import Logout from "./components/Logout";
+import Login from "./components/Login";
 import {useAuth} from "react-oauth2-pkce";
 
 export default function App() {
@@ -43,7 +43,7 @@ export default function App() {
                     <PrivateRoute exact path="/search">
                         <Search />
                     </PrivateRoute>
-                    <PrivateRoute path="/album/:albumId">
+                    <PrivateRoute exact path="/album/:albumId">
                         <AlbumDetails />
                     </PrivateRoute>
                 </Switch>

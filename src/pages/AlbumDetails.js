@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react"
-import './AlbumDetails.css'
+import '../assets/styles/AlbumDetails.css'
 import {useHistory, useParams} from "react-router-dom";
 import SpotifyWebApi from "spotify-web-api-node";
-import TrackRow from "./TrackRow";
-import previous from "./assets/icons/previous.png"
+import TrackRow from "../components/TrackRow";
+import previous from "../assets/icons/previous.png"
 
 const spotifyApi = new SpotifyWebApi({
     clientId: process.env.REACT_APP_CLIENT_ID,
