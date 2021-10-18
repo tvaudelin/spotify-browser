@@ -7,7 +7,6 @@ const spotifyApi = new SpotifyWebApi({
     accessToken: localStorage.getItem('auth') ? JSON.parse(localStorage.getItem('auth')).access_token : ''
 })
 
-
 export default function Search() {
     const [search, setSearch] = useState("")
     const [searchResults, setSearchResults] = useState([])

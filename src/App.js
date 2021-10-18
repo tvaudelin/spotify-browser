@@ -1,13 +1,35 @@
 import React from "react"
 import './App.css'
 import {Container} from "react-bootstrap"
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
+import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom"
 import Search from "./Search";
 import AlbumDetails from "./AlbumDetails";
 import Logout from "./Logout";
+import Login from "./Login";
+import {useAuth} from "react-oauth2-pkce";
 
 export default function App() {
-    document.body.style.backgroundColor = "#121212"
+
+    function PrivateRoute({ children, ...rest }) {
+        const { authService } = useAuth();
+        return (
+            <Route
+                {...rest}
+                render={({ location }) =>
+                    authService.isAuthenticated() ? (
+                        children
+                    ) : (
+                        <Redirect
+                            to={{
+                                pathname: "/",
+                                state: { from: location }
+                            }}
+                        />
+                    )
+                }
+            />
+        );
+    }
 
     return (
         <Router>
@@ -15,11 +37,15 @@ export default function App() {
                 <Logout />
                 <Switch>
                     <Route exact path="/">
+                        <Login />
+                    </Route>
+
+                    <PrivateRoute exact path="/search">
                         <Search />
-                    </Route>
-                    <Route path="/album/:albumId">
+                    </PrivateRoute>
+                    <PrivateRoute path="/album/:albumId">
                         <AlbumDetails />
-                    </Route>
+                    </PrivateRoute>
                 </Switch>
 
             </Container>
